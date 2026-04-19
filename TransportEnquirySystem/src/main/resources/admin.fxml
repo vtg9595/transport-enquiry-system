@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.transport.controller.AdminController"
+      spacing="20"
+      styleClass="content-panel">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Transport Management" styleClass="section-title"/>
+
+    <GridPane hgap="10" vgap="10">
+        <JFXTextField fx:id="vehicleNumberField" promptText="Vehicle Number"
+                     GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                     
+        <JFXTextField fx:id="routeNumberField" promptText="Route Number"
+                     GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                     
+        <JFXTextField fx:id="sourceField" promptText="Source"
+                     GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                     
+        <JFXTextField fx:id="destinationField" promptText="Destination"
+                     GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                     
+        <JFXTextField fx:id="fareField" promptText="Fare"
+                     GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                     
+        <JFXTextField fx:id="seatsField" promptText="Available Seats"
+                     GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                     
+        <JFXComboBox fx:id="transportTypeCombo" promptText="Transport Type"
+                    GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    </GridPane>
+
+    <HBox spacing="10">
+        <JFXButton text="Add Transport" onAction="#handleAdd" styleClass="primary-button"/>
+        <JFXButton text="Delete Selected" onAction="#handleDelete" styleClass="secondary-button"/>
+    </HBox>
+
+    <TableView fx:id="transportTable" VBox.vgrow="ALWAYS"/>
+
+</VBox>
